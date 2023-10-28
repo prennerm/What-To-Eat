@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th>Name</th>
+            <th>Time</th>
+            <th>Vegetarian</th>
+            <th>Vegan</th>
+            <th>Kosher</th>
+            <th>Hot</th>
+            <th>Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recipe in recipes %}
+        <tr>
+            <td>{{ recipe[0] }}</td>
+            <td>{{ recipe[1] }}</td>
+            <td>{{"Yes" if recipe[2] else "No"}}</td>
+            <td>{{"Yes" if recipe[3] else "No"}}</td>
+            <td>{{"Yes" if recipe[4] else "No"}}</td>
+            <td>{{"Yes" if recipe[5] else "No"}}</td>
+            <td><a href="{{ recipe[6] }}" target="_blank">Go to Recipe</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

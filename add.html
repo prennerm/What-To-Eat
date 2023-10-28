@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Add
+{% endblock %}
+
+{% block main %}
+
+{% if message %}
+{{ message }}
+{% endif %}
+<h1>Add Recipe</h1>
+<form action="/add" method="post">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" placeholder="Name">
+    <br>
+
+    <label for="url">Recipe URL:</label>
+    <input type="text" name="url" placeholder="Recipe URL">
+    <br>
+
+    <label for="time">Time (if you cannot tell, an estimate will be sufficient):</label>
+    <input type="number" name="time" id="time" placeholder="Minutes">
+    <br>
+    <label for="vegetarian">Vegetarian:</label>
+    <input type="checkbox" name="vegetarian" id="vegetarian" value="1">
+    <br>
+
+    <label for="vegan">Vegan:</label>
+    <input type="checkbox" name="vegan" id="vegan" value="1">
+    <br>
+
+    <label for="kosher">Kosher:</label>
+    <input type="checkbox" name="kosher" id="kosher" value="1">
+    <br>
+
+    <label for="hot">Hot:</label>
+    <input type="checkbox" name="hot" id="hot" value="1">
+    <br>
+
+
+    <input type="submit" value="Add">
+</form>
+{% endblock %}

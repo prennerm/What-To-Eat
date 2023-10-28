@@ -1,0 +1,75 @@
+CREATE TABLE recipe_names (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    url TEXT
+);
+
+CREATE TABLE characteristics (
+    recipe_id INTEGER,
+    time INTEGER,
+    vegetarian BIT, /* insert 1 if true, 0 if not vegetarian */
+    vegan BIT,
+    kosher BIT,
+    hot BIT,
+    FOREIGN KEY(recipe_id) REFERENCES recipe_names(id)
+);
+
+INSERT INTO recipe_names(name, url) VALUES('Pan Seared Steak', 'https://natashaskitchen.com/pan-seared-steak/');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(1, 30, 0, 0, 1, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('Pasta Bolognese', 'https://www.bbcgoodfood.com/recipes/best-spaghetti-bolognese-recipe');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(2, 45, 0, 0, 0, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('Creamy Vegan Butternut Squash Soup', 'https://www.kosher.com/recipe/creamy-vegan-butternut-squash-soup-15895');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(3, 150, 1, 1, 1, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('Vegan Chocolate Donuts with Strawberry Icing', 'https://www.kosher.com/recipe/vegan-chocolate-donuts-with-strawberry-icing-14983');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(4, 30, 1, 1, 1, 0);
+
+INSERT INTO recipe_names(name, url) VALUES('Vegetable Lasagna with Vegan “Ricotta”', 'https://www.kosher.com/recipe/vegetable-lasagna-14804');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(5, 90, 1, 1, 1, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('No-Bake Vegan Caramel Cheesecake Cups', 'https://www.kosher.com/recipe/no-bake-vegan-caramel-cheesecake-cups-gluten-free-14570');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(6, 480, 1, 1, 1, 0);
+
+INSERT INTO recipe_names(name, url) VALUES('Vegan Lentil Mushroom Dumplings', 'https://www.kosher.com/recipe/vegan-lentil-mushroom-dumplings-13718');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(7, 60, 1, 1, 1, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('Florentine Butter Chicken', 'https://www.foodandwine.com/recipes/florentine-butter-chicken');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(8, 30, 0, 0, 0, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('Slow Cooker Pot Roast', 'https://www.allrecipes.com/recipe/16346/maries-easy-slow-cooker-pot-roast/');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(9, 510, 0, 0, 1, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('Throw Together Mexican Casserole', 'https://www.allrecipes.com/recipe/25135/throw-together-mexican-casserole/');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(10, 35, 0, 0, 1, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('Gyros Burgers', 'https://www.allrecipes.com/recipe/47407/gyros-burgers/');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(11, 25, 0, 0, 1, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('Goats cheese, leek and artichoke quiche', 'https://www.delicious.com.au/recipes/goats-cheese-leek-artichoke-quiche-recipe/5spcxrmi?r=recipes/group/z6170ooq');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(12, 45, 1, 0, 0, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('Spiced black beans, chorizo, fried eggs and herbs', 'https://www.delicious.com.au/recipes/spiced-black-beans-chorizo-fried-eggs-herbs-recipe/l8e0ao6e?r=recipes/group/z6170ooq');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(13, 45, 0, 0, 0, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('Hanoi-style eggs', 'https://www.delicious.com.au/recipes/hanoi-style-eggs/nbD8fOe9?r=recipes/group/z6170ooq');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(14, 30, 1, 0, 1, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('Okra and egg curry with rice and fragrant herbs', 'https://www.delicious.com.au/recipes/okra-egg-curry-rice-fragrant-herbs/r9UFoKjF?r=recipes/group/z6170ooq');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(15, 25, 1, 0, 1, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('Raw vegies, ricotta, eggs and green sauce', 'https://www.delicious.com.au/recipes/raw-vegies-ricotta-eggs-green-sauce/03k3sI3I');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(16, 45, 1, 0, 1, 0);
+
+INSERT INTO recipe_names(name, url) VALUES('Baba Ghanoush', 'https://www.delish.com/cooking/recipe-ideas/a27757757/baba-ghanoush-recipe/');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(17, 90, 1, 1, 1, 0);
+
+INSERT INTO recipe_names(name, url) VALUES('Teriyaki tofu with charred spring onions', 'https://www.bbcgoodfood.com/recipes/charred-spring-onions-teriyaki-tofu');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(18, 30, 1, 1, 1, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('Sesame & spring onion stir-fried udon with crispy tofu', 'https://www.bbcgoodfood.com/recipes/sesame-spring-onion-stir-fried-udon-with-crispy-tofu');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(19, 20, 1, 1, 1, 1);
+
+INSERT INTO recipe_names(name, url) VALUES('Mushroom mapo tofu', 'https://www.bbcgoodfood.com/recipes/mushroom-mapo-tofu');
+INSERT INTO characteristics(recipe_id, time, vegetarian, vegan, kosher, hot) VALUES(20, 30, 1, 0, 1, 1);

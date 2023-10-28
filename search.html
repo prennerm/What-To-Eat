@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<h1>Find a Recipe</h1>
+
+<form action="/search_results" method="post">
+    <label for="time">Max preparation time (in minutes):</label>
+    <input type="number" name="time" id="time">
+    <br>
+
+    <input type="checkbox" name="vegetarian" id="vegetarian">
+    <label for="vegetarian">Vegetarian</label>
+    <br>
+
+    <input type="checkbox" name="vegan" id="vegan">
+    <label for="vegan">Vegan</label>
+    <br>
+
+    <input type="checkbox" name="kosher" id="kosher">
+    <label for="kosher">Kosher</label>
+    <br>
+
+    <input type="checkbox" name="hot" id="hot">
+    <label for="hot">Hot</label>
+    <br>
+
+    <input type="submit" value="Search">
+</form>
+{% endblock %}
